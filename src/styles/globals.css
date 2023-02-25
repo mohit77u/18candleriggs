@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Alike&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.font-alike{
+    font-family: 'Alike', serif !important;
+}
+
+.banner{
+    background: url('/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
