@@ -8,9 +8,9 @@ export default function Footer() {
             {/* top menus and logo */}
             <div className="hidden lg:flex justify-between items-center sm:px-8">
                 <div className="logo">
-                    <a href="/">
+                    <Link href="/">
                         <img src="/images/logo.svg" alt="logo" />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="menu">
