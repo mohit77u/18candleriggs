@@ -34,10 +34,10 @@ export default function Footer() {
                 </div>
 
                 <div className="social flex gap-3">
-                    <a href="/">
+                    <a href="#">
                         <img src="/images/facebook.png" alt="fb" />
                     </a>
-                    <a href="/">
+                    <a href="#">
                         <img src="/images/instagram.png" alt="insta" />
                     </a>
                 </div>
@@ -85,10 +85,10 @@ export default function Footer() {
                         <div className="lg:hidden block mt-6">
                             <h3 className='text-xl text-white font-semibold mb-1'>Social Links</h3>
                             <div className="social flex gap-3 mt-4">
-                                <a href="/">
+                                <a href="#">
                                     <img src="/images/facebook.png" alt="fb" />
                                 </a>
-                                <a href="/">
+                                <a href="#">
                                     <img src="/images/instagram.png" alt="insta" />
                                 </a>
                             </div>
