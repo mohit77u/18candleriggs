@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
@@ -15,19 +16,19 @@ export default function Footer() {
                 <div className="menu">
                     <ul class="flex items-center justify-center gap-x-8">
                         <li>
-                            <a href="#" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 dark:text-white" aria-current="page">Home</a>
+                            <Link href="/" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0 dark:text-white" aria-current="page">Home</Link>
                         </li>
                         <li>
                             <a href="#" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">What’s on</a>
                         </li>
                         <li>
-                            <a href="#" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Book Venue</a>
+                            <Link href="/book-venue" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Book Venue</Link>
                         </li>
                         <li>
                             <a href="#" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Menu</a>
                         </li>
                         <li>
-                            <a href="#" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</a>
+                            <Link href="/gallery" class="block text-[16px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Gallery</Link>
                         </li>
                     </ul>
                 </div>
@@ -114,7 +115,7 @@ export default function Footer() {
 
             {/* bottom text */}
             <div className="bottom-text text-right mt-4 sm:px-8">
-                <p className='text-gray-500 text-sm'>©  18 candleriggs 2022</p>
+                <p className='text-gray-300 text-sm'>©  18 candleriggs 2022</p>
             </div>
         </footer>
     </>

@@ -76,7 +76,7 @@ export default function Home() {
                   {/* bottom button */}
                   <button
                   disabled={card?.sold || card?.cancelled ? 'disabled' : ''}
-                  className={` text-md px-4 bg-yellow-300 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold ${card?.sold && "bg-red-500 text-white"} ${card?.cancelled && "bg-gray-400 text-primary"} ${card?.private && "bg-gray-900 text-white"}`}
+                  className={`text-md px-4 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold ${card?.sold && "bg-red-500 text-white"} ${card?.cancelled && "bg-gray-400 text-primary"} ${card?.private && "bg-gray-900 text-white"} ${!card?.sold && !card?.cancelled && !card?.private && "bg-yellow-500 text-black"}`}
                   
                   >Book Tickets</button>
                 </div>

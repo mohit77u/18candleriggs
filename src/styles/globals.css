@@ -17,3 +17,9 @@ html{
     background-size: cover;
     background-position: center;
 }
+
+.book-details{
+    background: url('/images/book-venue-details.jpg');
+    background-size: cover;
+    background-position: center;
+}
