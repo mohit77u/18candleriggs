@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,7 +10,7 @@ export default function Footer() {
             <div className="hidden lg:flex justify-between items-center sm:px-8">
                 <div className="logo">
                     <Link href="/">
-                        <img src="/images/logo.svg" alt="logo" />
+                        <Image src="/images/logo.svg" width={95} height={90} alt="logo" />
                     </Link>
                 </div>
 
@@ -35,10 +36,10 @@ export default function Footer() {
 
                 <div className="social flex gap-3">
                     <a href="#">
-                        <img src="/images/facebook.png" alt="fb" />
+                        <Image width={25} height={25} src="/images/facebook.png" alt="fb" />
                     </a>
                     <a href="#">
-                        <img src="/images/instagram.png" alt="insta" />
+                        <Image width={25} height={25} src="/images/instagram.png" alt="insta" />
                     </a>
                 </div>
             </div>
@@ -74,11 +75,11 @@ export default function Footer() {
                         <h3 className='text-xl text-white font-semibold mb-1'>Contact Us</h3>
                         <ul>
                             <li className='flex items-center gap-3 py-2'>
-                                <img src="/images/mail.png" alt="mail" />
+                                <Image width={25} height={25} src="/images/mail.png" alt="mail" />
                                 <span className='text-gray-300 text-sm'>events@18candleriggs.com</span>
                             </li>
                             <li className='flex items-center gap-3 py-2'>
-                                <img src="/images/phone.png" alt="phone" />
+                                <Image width={25} height={25} src="/images/phone.png" alt="phone" />
                                 <span className='text-gray-300 text-sm'>0330 202 1818</span>
                             </li>
                         </ul>
@@ -86,10 +87,10 @@ export default function Footer() {
                             <h3 className='text-xl text-white font-semibold mb-1'>Social Links</h3>
                             <div className="social flex gap-3 mt-4">
                                 <a href="#">
-                                    <img src="/images/facebook.png" alt="fb" />
+                                    <Image width={25} height={25} src="/images/facebook.png" alt="fb" />
                                 </a>
                                 <a href="#">
-                                    <img src="/images/instagram.png" alt="insta" />
+                                    <Image width={25} height={25} src="/images/instagram.png" alt="insta" />
                                 </a>
                             </div>
                         </div>
