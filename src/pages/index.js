@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Image from 'next/image'
 const func = require('@/components/Functions')
 
 export default function Home() {
@@ -31,9 +32,9 @@ export default function Home() {
           {/* top */}
           <div className='flex items-center mb-7'>
             <h2 className='sm:text-3xl text-2xl text-black font-semibold md:text-left ml-auto text-center'>What's On At Glasgow's Coolest Event Space.</h2>
-            <button className='md:flex hidden gap-2 items-center ml-auto'>
+            <button className='md:flex hidden gap-2 items-center ml-auto relative'>
               <span>View All</span>
-              <img src="/images/arrow-right.png" alt="arrow" />
+              <Image src="/images/arrow-right.png" alt="arrow" width={20} height={15} />
             </button>
           </div>
           {/* main cards */}
@@ -41,16 +42,16 @@ export default function Home() {
             {func?.cardData?.map((card,index) => (
               <div className="card border border-gray-200 rounded-md" key={index}>
                 <div className="card-top relative">
-                  <img src={"/images/" + card.image} alt={"card_" + index} className='w-full max-h-[400px] object-cover' />
+                  <Image src={"/images/" + card.image} alt={"card_" + index} className='w-full max-h-[400px] object-cover' width={445} height={400} />
                   {card?.sold && (
-                    <img src="/images/sold-out.png" alt="sold-out" className='absolute left-0 bottom-0 w-full h-auto' />
+                    <Image src="/images/sold-out.png" alt="sold-out" className='absolute left-0 bottom-0 w-full h-auto' width={445} height={295}  />
                   )}
                   {card?.cancelled && (
-                    <img src="/images/cancelled.png" alt="cancelled" className='absolute left-0 bottom-0 w-full h-auto' />
+                    <Image src="/images/cancelled.png" alt="cancelled" className='absolute left-0 bottom-0 w-full h-auto' width={445} height={295} />
                   )}
                 </div>
                 <div className="card-middle bg-primary text-white flex gap-2 items-center w-full py-1.5 px-6 text-md">
-                  <img src="/images/calendar-white.svg" alt="calendar-white" />
+                  <Image src="/images/calendar-white.svg" alt="calendar-white" width={12} height={12} />
                   <span>{card.date}</span>
                 </div>
                 <div className="card-body py-4 px-6">
@@ -58,27 +59,48 @@ export default function Home() {
                   <p className='text-gray-700 text-sm leading-6'>{card.desc}</p>
                   <div className="grid grid-cols-2 gap-2 my-3">
                     <div className='tickets flex items-center gap-2'>
-                      <img src="/images/tickets-black.svg" alt="tickets" />
+                      <Image src="/images/tickets-black.svg" alt="tickets" width={14} height={15} />
                       <span className='text-gray-700 text-sm'>Tickets</span>
                       <span className='text-gray-700 text-sm'>{card.tickets}</span>
                     </div>
                     <div></div>
                     <div className='tickets flex items-center gap-2'>
-                      <img src="/images/user-black.svg" alt="user" />
+                      <Image src="/images/user-black.svg" alt="user" width={12} height={15} />
                       <span className='text-gray-700 text-sm'>Age: {card.age}</span>
                     </div>
                     <div className='tickets flex items-center gap-2'>
-                      <img src="/images/time-black.svg" alt="time" />
+                      <Image src="/images/time-black.svg" alt="time" width={14} height={15} />
                       <span className='text-gray-700 text-sm'>{card.time}</span>
                     </div>
                   </div>
 
                   {/* bottom button */}
-                  <button
-                  disabled={card?.sold || card?.cancelled ? 'disabled' : ''}
-                  className={`text-md px-4 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold ${card?.sold && "bg-red-500 text-white"} ${card?.cancelled && "bg-gray-400 text-primary"} ${card?.private && "bg-gray-900 text-white"} ${!card?.sold && !card?.cancelled && !card?.private && "bg-yellow-500 text-black"}`}
-                  
-                  >Book Tickets</button>
+                  {/* sold button */}
+                  {card?.sold && (
+                    <button
+                      disabled
+                      className={'text-md px-4 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold bg-red-500 text-white'}
+                    >Book Tickets</button>
+                  )}
+                  {/* cancelled button */}
+                  {card?.cancelled && (
+                    <button
+                      disabled
+                      className={'text-md px-4 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold bg-gray-500 text-primary'}
+                    >Book Tickets</button>
+                  )}
+                  {/* private button */}
+                  {card?.private && (
+                    <button
+                      className={'text-md px-4 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold bg-gray-900 text-white'}
+                    >Book Tickets</button>
+                  )}
+                  {/* private button */}
+                  {!card?.sold && !card?.cancelled && !card?.private && (
+                    <button
+                      className={'text-md px-4 py-2 rounded text-center block w-full mt-8 mb-2 font-semibold bg-yellow-300 text-primary'}
+                    >Book Tickets</button>
+                  )}
                 </div>
               </div>
             ))}
@@ -94,10 +116,10 @@ export default function Home() {
             <h2 className='sm:text-3xl text-2xl text-black font-semibold text-left mx-auto'>Must See Events</h2>
             <div className="flex items-center gap-3">
               <button className='flex gap-2 items-center ml-auto'>
-                <img src="/images/arrow-left-circle.svg" alt="arrow" />
+                <Image src="/images/arrow-left-circle.svg" alt="arrow" width={30} height={30} />
               </button>
               <button className='flex gap-2 items-center ml-auto'>
-                <img src="/images/arrow-right-circle.svg" alt="arrow" />
+                <Image src="/images/arrow-right-circle.svg" alt="arrow" width={30} height={30} />
               </button>
             </div>
           </div>
@@ -106,10 +128,10 @@ export default function Home() {
             {func?.cardSlidesData?.map((card,index) => (
               <div className="card border border-gray-200 rounded-md relative" key={index}>
                 <div className="card-top">
-                  <img src={"/images/" + card.image} alt={"card_" + index} className='w-full object-cover min-h-[400px]' />
+                  <Image src={"/images/" + card.image} alt={"card_" + index} className='w-full object-cover min-h-[400px]' width={445} height={350} />
                 </div>
                 <div className="card-middle absolute top-0 left-0 justify-center bg-primary text-white flex gap-2 items-center w-full py-1.5 px-6 text-md">
-                  <img src="/images/calendar-white.svg" alt="calendar-white" />
+                  <Image src="/images/calendar-white.svg" alt="calendar-white" width={14} height={15} />
                   <span>{card.date}</span>
                 </div>
                 <div className="card-body absolute bottom-0 left-0 w-full md:py-4 py-2 md:px-6 px-2 bg-black/50">
@@ -117,24 +139,24 @@ export default function Home() {
                   <p className='text-gray-100 text-sm leading-6'>{card.desc}</p>
                   <div className="grid grid-cols-2 gap-2 my-3">
                     <div className='tickets flex items-center gap-2'>
-                      <img src="/images/tickets-white.svg" alt="tickets" />
+                      <Image src="/images/tickets-white.svg" alt="tickets" width={14} height={15} />
                       <span className='text-gray-100 text-sm'>Tickets</span>
                       <span className='text-gray-100 text-sm'>{card.tickets}</span>
                     </div>
                     <div></div>
                     <div className='tickets flex items-center gap-2'>
-                      <img src="/images/user-white.svg" alt="user" />
+                      <Image src="/images/user-white.svg" alt="user" width={12} height={15} />
                       <span className='text-gray-100 text-sm'>Age: {card.age}</span>
                     </div>
                     <div className='tickets flex items-center gap-2'>
-                      <img src="/images/time-white.svg" alt="time" />
+                      <Image src="/images/time-white.svg" alt="time" width={12} height={15} />
                       <span className='text-gray-100 text-sm'>{card.time}</span>
                     </div>
                   </div>
 
                   {/* bottom button */}
                   <button
-                    className={`text-md px-4 bg-yellow-300 py-2 rounded text-center block w-full mt-4 font-semibold`}
+                    className='text-md px-4 bg-yellow-300 py-2 rounded text-center block w-full mt-4 font-semibold'
                   >Book Tickets</button>
                 </div>
               </div>

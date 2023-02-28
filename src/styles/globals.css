@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Alike&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
 
 html{
     font-family: 'Roboto', sans-serif;
@@ -22,4 +23,8 @@ html{
     background: url('/images/book-venue-details.jpg');
     background-size: cover;
     background-position: center;
+}
+
+.font-Rochester{
+    font-family: 'Rochester', cursive;
 }
