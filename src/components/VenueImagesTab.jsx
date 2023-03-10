@@ -40,7 +40,7 @@ function VenueImagesTab() {
             {!loading && AllImages.length > 0 ? 
                 <>
                     <div className="tab-content lg:w-8/12 mx-auto my-5">
-                        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 grid-cols-1 gap-6">
+                        <div className="grid sm:grid-cols-1 md:grid-cols-2 grid-cols-1 gap-6">
 
                             {AllImagesFormated?.map((image, index) => (
                                 <div key={index}>
@@ -51,7 +51,7 @@ function VenueImagesTab() {
                                     )}
 
                                     {index == 1 && (
-                                        <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
+                                        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
                                             {image?.map((smallImage, index) => (
                                                 <div className="single-small" key={index}>
                                                     <Image src={smallImage?.src?.original} alt="gallery" className='w-full small-image' width={smallImage?.width} height={smallImage?.height} priority />
@@ -62,7 +62,7 @@ function VenueImagesTab() {
                                     )}
 
                                     {index == 2 && (
-                                        <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
+                                        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
                                             {image?.map((smallImage, index) => (
                                                 <div className="single-small" key={index}>
                                                     <Image src={smallImage?.src?.original} alt="gallery" className='w-full small-image' width={smallImage?.width} height={smallImage?.height} priority />

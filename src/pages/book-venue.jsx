@@ -16,14 +16,14 @@ function BookVenue(props) {
         <div className="venue grid grid-cols-2">
           <div className="left">
             <div className="p-5 bg-yellow-300">
-              <h2 className='md:text-4xl text-2xl text-gray-800 mb-3 font-Rochester'>At 18 Candleriggs we make it happen</h2>
+              <h2 className='md:text-4xl text-lg text-gray-800 mb-3 font-Rochester'>At 18 Candleriggs we make it happen</h2>
               <Image src="/images/venue-1.jpg" alt="venue 1" width={670} height={415} />
             </div>
           </div>
-          <div className="right mt-[100px] ml-[-100px] z-[-1]">
+          <div className="right mt-[100px] sm:ml-[-100px] ml-[-50px] z-[-1]">
             <div className="p-5 bg-green-900">
               <Image src="/images/venue-2.jpg" alt="venue 2" width={850} height={415} />
-              <h2 className='font-Rochester md:text-4xl text-2xl text-yellow-300 mt-3'>Events are the name of the game</h2>
+              <h2 className='font-Rochester md:text-4xl text-lg text-yellow-300 mt-3'>Events are the name of the game</h2>
             </div>
           </div>
         </div>
