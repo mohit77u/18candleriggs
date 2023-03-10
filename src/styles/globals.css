@@ -28,3 +28,18 @@ html{
 .font-Rochester{
     font-family: 'Rochester', cursive;
 }
+
+.tab-content .single-small img, .tab-content .single-small img {
+    max-height: 200px;
+    min-height: 200px;
+    width: 100%;
+    object-fit: 'cover';
+}
+  
+.tab-content .single-big img, .tab-content .single-big img {
+    width: 100%;
+    max-height: 425px;
+    min-height: 425px;
+    object-fit: 'cover';
+}
+   

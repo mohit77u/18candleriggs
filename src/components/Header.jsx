@@ -52,25 +52,25 @@ export default function Header() {
             {/* main menu */}
             <ul className="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
               <li>
-                <Link href="/" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">Home</Link>
+                <Link href="/" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Home</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">What’s on</a>
+                <a href="#" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">What’s on</a>
               </li>
               <li>
-                <Link href="/book-venue" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">Book Venue</Link>
+                <Link href="/book-venue" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Book Venue</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">Menu</a>
+                <a href="#" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Menu</a>
               </li>
               <li>
-              <Link href="/gallery" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">Gallery</Link>
+              <Link href="/gallery" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Gallery</Link>
               </li>
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">About Us</a>
+                <a href="#" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">About Us</a>
               </li>
               <li>
-                <a href="#" className="block py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0">Contact Us</a>
+                <a href="#" className="block text-[14px] py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0">Contact Us</a>
               </li>
             </ul>
           </div>
