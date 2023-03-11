@@ -50,7 +50,7 @@ function EventsImagesTab() {
                                     )}
 
                                     {index == 1 && (
-                                        <div className="grid sn:grid-cols-2 grid-cols-1 gap-6">
+                                        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6">
                                             {image?.map((smallImage, index) => (
                                                 <div className="single-small" key={index}>
                                                     <Image src={smallImage?.src?.original} alt="gallery" className='w-full small-image' width={smallImage?.width} height={smallImage?.height} priority />
