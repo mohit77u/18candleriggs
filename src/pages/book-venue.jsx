@@ -33,9 +33,9 @@ function BookVenue(props) {
       <section className="book sm:px-12 px-6 py-8">
         <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-12">Book venue</h2>
 
-        <div className="book-details grid md:grid-cols-2 grid-cols-1 gap-6 mt-6">
-          <div></div>
-          <div className='bg-black/60 py-6 px-12'>
+        <div className="book-details grid md:grid-cols-2 grid-cols-1 md:gap-6 mt-6">
+          <div className='hideen md:block'></div>
+          <div className='bg-black/60 py-6 md:px-12 px-5'>
             <p className='text-white text-lg font-medium mb-8 leading-8 text-center'>A one-stop cabaret lounge in the heart of Merchant City, 18 Candleriggs (formerly known as Wild Cabaret) knows no bounds when it comes to unique dabbles, daring nights and dashing shows.</p>
             <p className='text-white text-lg font-medium mb-8 leading-8 text-center'>Echoing its eccentric entertainment, the decor is markedly Art Deco. Gilded in gold, with a bar boasting its name up in Hollywood-style lights, these two spaces epitomize showbiz and glistening sass. Sashay down to a table of baroque seats and let the show commence.</p>
             <p className='text-white text-lg font-medium mb-8 leading-8 text-center'>Events are the name of the game at 18 Candelriggs, where live music and cabaret reign supreme. From burlesque shows and circus troupes to comedy nights and luxe shows, it's at the top of its game when it comes to providing guests with a wholly unique drinking and dining experience in the city. Top hats? Sparkles? And feather boas? These all come as standard.</p>
@@ -48,7 +48,7 @@ function BookVenue(props) {
       </section>
 
       {/* bottom section */}
-      <section className="py-12 sm:px-12 px-8">
+      <section className="py-12 sm:px-12 px-5">
         <div className="grid md:grid-cols-2 gap-6 bg-primary p-8">
           <div className='grid sm:grid-cols-2 grid-cols-1 gap-6'>
             <div>
