@@ -30,7 +30,7 @@ function FoodsImagesTab() {
     useEffect(() => {
         setTimeout(() => {
             getAllImages();
-        }, 500)
+        }, 1500)
     }, [])
 
 

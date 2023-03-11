@@ -30,7 +30,7 @@ function EventsImagesTab() {
     useEffect(() => {
         setTimeout(() => {
             getAllImages();
-        }, 500)
+        }, 1500)
     }, [])
 
 
