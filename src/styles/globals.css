@@ -1,48 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '../assets/css/animate.min.css';
+@import '../assets/css/bootstrap.min.css';
+@import '../assets/css/candidates.css';
+@import '../assets/css/flaticon.css';
+@import '../assets/css/font-awesome.min.css';
+@import '../assets/css/gijgo.css';
+@import '../assets/css/magnific-popup.css';
+@import '../assets/css/nice-select.css';
+@import '../assets/css/slicknav.css';
+@import '../assets/css/style.css';
+@import '../assets/css/themify-icons.css';
 
-@import url('https://fonts.googleapis.com/css2?family=Alike&family=Roboto:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
-
-html{
-    font-family: 'Roboto', sans-serif;
-}
-
-.font-alike{
-    font-family: 'Alike', serif !important;
-}
-
-.banner{
-    background: url('/images/banner.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.book-details{
-    background: url('/images/book-venue-details.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.font-Rochester{
-    font-family: 'Rochester', cursive;
-}
-
-.tab-content .single-small img, .tab-content .single-small img {
-    max-height: 200px;
-    min-height: 200px;
+.logo img {
+    max-width: 60%;
     width: 100%;
-    object-fit: 'cover';
 }
-  
-.tab-content .single-big img, .tab-content .single-big img {
-    width: 100%;
-    max-height: 425px;
-    min-height: 425px;
-    object-fit: 'cover';
+
+.secondary-header {
+    background: #001d38 !important;
 }
-   
-.venue-banner img{
-    min-height: 200px;
+
+.secondary .header-area {
+    position: relative;
+}
+
+.login {
+    padding: 100px 0;
+}
+
+.login input{
+    padding: 15px 20px;
 }

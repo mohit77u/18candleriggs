@@ -1,117 +1,615 @@
-import Head from 'next/head'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
-import Content from '@/components/Content'
-import { cardData, cardSlidesData } from '@/components/function'
 
-export default function Home(props) {
-  return (
-    <>
-        <Layout title={props.title}>
+export default function Home(props)
+{
+	return (
+		<>
+			<Layout title={ props.title }>
+				
+				{/* banner section */ }
+				<div className="slider_area">
+					<div className="single_slider  d-flex align-items-center slider_bg_1">
+						<div className="container">
+							<div className="row align-items-center">
+								<div className="col-lg-7 col-md-6">
+									<div className="slider_text">
+										<h5 className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">4536+ Jobs listed</h5>
+										<h3 className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Find your Dream Job</h3>
+										<p className="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">We provide online instant cash loans with quick approval that suit your term length</p>
+										<div className="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+											<a href="#" className="boxed-btn3">Upload your Resume</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="ilstration_img wow fadeInRight d-none d-lg-block text-right" data-wow-duration="1s" data-wow-delay=".2s">
+						<Image
+							src="/assets/img/banner/illustration.png"
+							width={ 700 }
+							height={ 550 }
+							className="banner-img"
+							alt="Logo"
+						/>
+					</div>
+				</div>
 
-          {/* banner */}
-          <section className="banner py-20 px-8 sm:px-14">
-            <div className="bg-white/20 p-5 rounded">
-              <div className="border-2 border-black rounded ms:p-5 p-2">
-                <h1 className='text-center lg:py-28 md:py-20 py-12 text-white lg:text-6xl md:text-5xl sm:text-4xl text-xl md:leading-[65px] leading-[30px] font-alike'>The perfect night out in Glasgow ! <br />18 Candleriggs</h1>
-              </div>
-            </div>
-          </section>
+				{/* category section */ }
+				<div className="catagory_area">
+					<div className="container">
+						<div className="row cat_search">
+							<div className="col-lg-3 col-md-4">
+								<div className="single_input">
+									<input type="text" placeholder="Search keyword" />
+								</div>
+							</div>
+							<div className="col-lg-3 col-md-4">
+								<div className="single_input">
+									<select className="wide" >
+										<option data-display="Location">Location</option>
+										<option value="1">Dhaka</option>
+										<option value="2">Rangpur</option>
+										<option value="4">Sylet</option>
+									</select>
+								</div>
+							</div>
+							<div className="col-lg-3 col-md-4">
+								<div className="single_input">
+									<select className="wide">
+										<option data-display="Category">Category</option>
+										<option value="1">Category 1</option>
+										<option value="2">Category 2</option>
+										<option value="4">Category 3</option>
+									</select>
+								</div>
+							</div>
+							<div className="col-lg-3 col-md-12">
+								<div className="job_btn">
+									<a href="#" className="boxed-btn3">Find Job</a>
+								</div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="popular_search d-flex align-items-center">
+									<span>Popular Search:</span>
+									<ul>
+										<li><a href="#">Design & Creative</a></li>
+										<li><a href="#">Marketing</a></li>
+										<li><a href="#">Administration</a></li>
+										<li><a href="#">Teaching & Education</a></li>
+										<li><a href="#">Engineering</a></li>
+										<li><a href="#">Software & Web</a></li>
+										<li><a href="#">Telemarketing</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-          {/* card */}
-          <section className="what bg-white py-16 sm:px-14 px-8">
-            {/* top */}
-            <div className='flex items-center mb-7'>
-              <h2 className='sm:text-3xl text-2xl text-black font-semibold md:text-left ml-auto text-center'>What's On At Glasgow's Coolest Event Space.</h2>
-              <button className='md:flex hidden gap-2 items-center ml-auto relative'>
-                <span>View All</span>
-                <Image src="/images/arrow-right.png" alt="arrow" width={20} height={15} />
-              </button>
-            </div>
-            {/* main cards */}
-            <Content data={props.data} />
-            {/* bottom more button */}
-            <button className='w-auto block mx-auto my-12 bg-gray-900 text-white rounded-full px-8 py-2 font-semibold'>More Events</button>
-          </section>
-          
-          {/* must see section */}
-          <section className="must-see pb-8 sm:px-14 px-8">
-            {/* top */}
-            <div className='flex items-center mb-7'>
-              <h2 className='sm:text-3xl text-2xl text-black font-semibold text-left mx-auto'>Must See Events</h2>
-              <div className="flex items-center gap-3">
-                <button className='flex gap-2 items-center ml-auto'>
-                  <Image src="/images/arrow-left-circle.svg" alt="arrow" width={30} height={30} />
-                </button>
-                <button className='flex gap-2 items-center ml-auto'>
-                  <Image src="/images/arrow-right-circle.svg" alt="arrow" width={30} height={30} />
-                </button>
-              </div>
-            </div>
-            {/* grids */}
-            <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 mt-20 mb-6">
-              {cardSlidesData?.map((card,index) => (
-                <div className="card border border-gray-200 rounded-md relative" key={index}>
-                  <div className="card-top">
-                    <Image src={"/images/" + card.image} alt={"card_" + index} className='w-full object-cover min-h-[400px]' width={445} height={350} />
-                  </div>
-                  <div className="card-middle absolute top-0 left-0 justify-center bg-primary text-white flex gap-2 items-center w-full py-1.5 px-6 text-md">
-                    <Image src="/images/calendar-white.svg" alt="calendar-white" width={14} height={15} />
-                    <span>{card.date}</span>
-                  </div>
-                  <div className="card-body absolute bottom-0 left-0 w-full md:py-4 py-2 md:px-6 px-2 bg-black/50">
-                    <h4 className='text-white font-semibold text-lg mb-2'>{card.title}</h4>
-                    <p className='text-gray-100 text-sm leading-6'>{card.desc}</p>
-                    <div className="grid grid-cols-2 gap-2 my-3">
-                      <div className='tickets flex items-center gap-2'>
-                        <Image src="/images/tickets-white.svg" alt="tickets" width={14} height={15} />
-                        <span className='text-gray-100 text-sm'>Tickets</span>
-                        <span className='text-gray-100 text-sm'>{card.tickets}</span>
-                      </div>
-                      <div></div>
-                      <div className='tickets flex items-center gap-2'>
-                        <Image src="/images/user-white.svg" alt="user" width={12} height={15} />
-                        <span className='text-gray-100 text-sm'>Age: {card.age}</span>
-                      </div>
-                      <div className='tickets flex items-center gap-2'>
-                        <Image src="/images/time-white.svg" alt="time" width={12} height={15} />
-                        <span className='text-gray-100 text-sm'>{card.time}</span>
-                      </div>
-                    </div>
+				{/* popular catagory_area */ }
+				<div className="popular_catagory_area">
+					<div className="container">
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="section_title mb-40">
+									<h3>Popolar Categories</h3>
+								</div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Design & Creative</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Marketing</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Telemarketing</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Software & Web</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Administration</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Teaching & Education</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Engineering</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_catagory">
+									<a href="jobs.html"><h4>Garments / Textile</h4></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                    {/* bottom button */}
-                    <button
-                      className='text-md px-4 bg-yellow-300 py-2 rounded text-center block w-full mt-4 font-semibold'
-                    >Book Tickets</button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+				{/* job listing */ }
+				<div className="job_listing_area">
+					<div className="container">
+						<div className="row align-items-center">
+							<div className="col-lg-6">
+								<div className="section_title">
+									<h3>Job Listing</h3>
+								</div>
+							</div>
+							<div className="col-lg-6">
+								<div className="brouse_job text-right">
+									<a href="jobs.html" className="boxed-btn4">Browse More Job</a>
+								</div>
+							</div>
+						</div>
+						<div className="job_lists">
+							<div className="row">
+								<div className="col-lg-12 col-md-12">
+									<div className="single_jobs white-bg d-flex justify-content-between">
+										<div className="jobs_left d-flex align-items-center">
+											<div className="thumb">
+											</div>
+											<div className="jobs_conetent">
+												<a href="job_details.html"><h4>Software Engineer</h4></a>
+												<div className="links_locat d-flex align-items-center">
+													<div className="location">
+														<p> <i className="fa fa-map-marker"></i> California, USA</p>
+													</div>
+													<div className="location">
+														<p> <i className="fa fa-clock-o"></i> Part-time</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="jobs_right">
+											<div className="apply_now">
+												<a className="heart_mark" href="#"> <i className="ti-heart"></i> </a>
+												<a href="job_details.html" className="boxed-btn3">Apply Now</a>
+											</div>
+											<div className="date">
+												<p>Date line: 31 Jan 2020</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-12 col-md-12">
+									<div className="single_jobs white-bg d-flex justify-content-between">
+										<div className="jobs_left d-flex align-items-center">
+											<div className="thumb">
+											</div>
+											<div className="jobs_conetent">
+												<a href="job_details.html"><h4>Digital Marketer</h4></a>
+												<div className="links_locat d-flex align-items-center">
+													<div className="location">
+														<p> <i className="fa fa-map-marker"></i> California, USA</p>
+													</div>
+													<div className="location">
+														<p> <i className="fa fa-clock-o"></i> Part-time</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="jobs_right">
+											<div className="apply_now">
+												<a className="heart_mark" href="#"> <i className="ti-heart"></i> </a>
+												<a href="job_details.html" className="boxed-btn3">Apply Now</a>
+											</div>
+											<div className="date">
+												<p>Date line: 31 Jan 2020</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-12 col-md-12">
+									<div className="single_jobs white-bg d-flex justify-content-between">
+										<div className="jobs_left d-flex align-items-center">
+											<div className="thumb">
+											</div>
+											<div className="jobs_conetent">
+												<a href="job_details.html"><h4>Wordpress Developer</h4></a>
+												<div className="links_locat d-flex align-items-center">
+													<div className="location">
+														<p> <i className="fa fa-map-marker"></i> California, USA</p>
+													</div>
+													<div className="location">
+														<p> <i className="fa fa-clock-o"></i> Part-time</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="jobs_right">
+											<div className="apply_now">
+												<a className="heart_mark" href="#"> <i className="ti-heart"></i> </a>
+												<a href="job_details.html" className="boxed-btn3">Apply Now</a>
+											</div>
+											<div className="date">
+												<p>Date line: 31 Jan 2020</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-12 col-md-12">
+									<div className="single_jobs white-bg d-flex justify-content-between">
+										<div className="jobs_left d-flex align-items-center">
+											<div className="thumb">
+											</div>
+											<div className="jobs_conetent">
+												<a href="job_details.html"><h4>Visual Designer</h4></a>
+												<div className="links_locat d-flex align-items-center">
+													<div className="location">
+														<p> <i className="fa fa-map-marker"></i> California, USA</p>
+													</div>
+													<div className="location">
+														<p> <i className="fa fa-clock-o"></i> Part-time</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="jobs_right">
+											<div className="apply_now">
+												<a className="heart_mark" href="#"> <i className="ti-heart"></i> </a>
+												<a href="job_details.html" className="boxed-btn3">Apply Now</a>
+											</div>
+											<div className="date">
+												<p>Date line: 31 Jan 2020</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-12 col-md-12">
+									<div className="single_jobs white-bg d-flex justify-content-between">
+										<div className="jobs_left d-flex align-items-center">
+											<div className="thumb">
+											</div>
+											<div className="jobs_conetent">
+												<a href="job_details.html"><h4>Software Engineer</h4></a>
+												<div className="links_locat d-flex align-items-center">
+													<div className="location">
+														<p> <i className="fa fa-map-marker"></i> California, USA</p>
+													</div>
+													<div className="location">
+														<p> <i className="fa fa-clock-o"></i> Part-time</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="jobs_right">
+											<div className="apply_now">
+												<a className="heart_mark" href="#"> <i className="ti-heart"></i> </a>
+												<a href="job_details.html" className="boxed-btn3">Apply Now</a>
+											</div>
+											<div className="date">
+												<p>Date line: 31 Jan 2020</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-lg-12 col-md-12">
+									<div className="single_jobs white-bg d-flex justify-content-between">
+										<div className="jobs_left d-flex align-items-center">
+											<div className="thumb">
+											</div>
+											<div className="jobs_conetent">
+												<a href="job_details.html"><h4>Creative Designer</h4></a>
+												<div className="links_locat d-flex align-items-center">
+													<div className="location">
+														<p> <i className="fa fa-map-marker"></i> California, USA</p>
+													</div>
+													<div className="location">
+														<p> <i className="fa fa-clock-o"></i> Part-time</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div className="jobs_right">
+											<div className="apply_now">
+												<a className="heart_mark" href="#"> <i className="ti-heart"></i> </a>
+												<a href="job_details.html" className="boxed-btn3">Apply Now</a>
+											</div>
+											<div className="date">
+												<p>Date line: 31 Jan 2020</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        </Layout>
-        
-    </>
-  )
+				{/* featured */ }
+				<div className="featured_candidates_area">
+					<div className="container">
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="section_title text-center mb-40">
+									<h3>Featured Candidates</h3>
+								</div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="candidate_active owl-carousel">
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+									<div className="single_candidates text-center">
+										<div className="thumb">
+
+										</div>
+										<a href="#"><h4>Markary Jondon</h4></a>
+										<p>Software Engineer</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* top companies */ }
+				<div className="top_companies_area">
+					<div className="container">
+						<div className="row align-items-center mb-40">
+							<div className="col-lg-6 col-md-6">
+								<div className="section_title">
+									<h3>Top Companies</h3>
+								</div>
+							</div>
+							<div className="col-lg-6 col-md-6">
+								<div className="brouse_job text-right">
+									<a href="jobs.html" className="boxed-btn4">Browse More Job</a>
+								</div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_company">
+									<div className="thumb">
+									</div>
+									<a href="jobs.html"><h3>Snack Studio</h3></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_company">
+									<div className="thumb">
+									</div>
+									<a href="jobs.html"><h3>Snack Studio</h3></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_company">
+									<div className="thumb">
+									</div>
+									<a href="jobs.html"><h3>Snack Studio</h3></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+							<div className="col-lg-4 col-xl-3 col-md-6">
+								<div className="single_company">
+									<div className="thumb">
+									</div>
+									<a href="jobs.html"><h3>Snack Studio</h3></a>
+									<p> <span>50</span> Available position</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* job seek */ }
+				<div className="job_searcing_wrap overlay">
+					<div className="container">
+						<div className="row">
+							<div className="col-lg-5 offset-lg-1 col-md-6">
+								<div className="searching_text">
+									<h3>Looking for a Job?</h3>
+									<p>We provide online instant cash loans with quick approval </p>
+									<a href="#" className="boxed-btn3">Browse Job</a>
+								</div>
+							</div>
+							<div className="col-lg-5 offset-lg-1 col-md-6">
+								<div className="searching_text">
+									<h3>Looking for a Expert?</h3>
+									<p>We provide online instant cash loans with quick approval </p>
+									<a href="#" className="boxed-btn3">Post a Job</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* testimonial */ }
+				<div className="testimonial_area  ">
+					<div className="container">
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="section_title text-center mb-40">
+									<h3>Testimonial</h3>
+								</div>
+							</div>
+							<div className="col-xl-12">
+								<div className="testmonial_active owl-carousel">
+									<div className="single_carousel">
+										<div className="row">
+											<div className="col-lg-11">
+												<div className="single_testmonial d-flex align-items-center">
+													<div className="thumb">
+														<div className="quote_icon">
+															<i className="Flaticon flaticon-quote"></i>
+														</div>
+													</div>
+													<div className="info">
+														<p>Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
+														<span>- Micky Mouse</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="single_carousel">
+										<div className="row">
+											<div className="col-lg-11">
+												<div className="single_testmonial d-flex align-items-center">
+													<div className="thumb">
+
+														<div className="quote_icon">
+															<i className=" Flaticon flaticon-quote"></i>
+														</div>
+													</div>
+													<div className="info">
+														<p>Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
+														<span>- Micky Mouse</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div className="single_carousel">
+										<div className="row">
+											<div className="col-lg-11">
+												<div className="single_testmonial d-flex align-items-center">
+													<div className="thumb">
+
+														<div className="quote_icon">
+															<i className="Flaticon flaticon-quote"></i>
+														</div>
+													</div>
+													<div className="info">
+														<p>Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering through animal welfare when people might depend on livestock as their only source of income or food.</p>
+														<span>- Micky Mouse</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</Layout>
+
+		</>
+	)
 }
 
 // static props
-export const getStaticProps = async () => {
-  let data = cardData;
-  // Return the data as props
-  return {
-      props: {
-        data,
-        title: 'Home Page'
-      },
-  };
+export const getStaticProps = async () =>
+{
+	return {
+		props: {
+			title: 'Home Page'
+		},
+	};
 
-  // const data = await fetch(
-  //     "https://jsonplaceholder.typicode.com/todos?_limit=10"
-  //   ).then((response) => response.json());
-  //   return {
-  //     props: { data }
-  //   };
 };
